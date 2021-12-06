@@ -131,4 +131,3 @@ C:\Users\themi\Documents\Projects\Ch12Ex1ClassSchedule\ClassSchedule\obj\Debug\n
 C:\Users\themi\Documents\Projects\Ch12Ex1ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\LeagueManagement.dll
 C:\Users\themi\Documents\Projects\Ch12Ex1ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\LeagueManagement.pdb
 C:\Users\themi\Documents\Projects\Ch12Ex1ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\LeagueManagement.genruntimeconfig.cache
-C:\Users\themi\Documents\Projects\Ch12Ex1ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\Razor\Views\Personal\Index.cshtml.g.cs
