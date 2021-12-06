@@ -1,0 +1,24 @@
+﻿@model Match
+
+@{
+    ViewData["Title"] = "Delete Match";
+}
+
+<h1 class="display-4">Delete Match</h1>
+<ul class="list-group mb-2">
+    <li class="list-group-item">
+        <h4>Match #:@Model?.Number League:@Model?.League</h4>
+    </li>
+    <li class="list-group-item">
+       @Model?.HomeTeam.TeamName VS @Model?.AwayTeam.TeamName
+    </li>
+    <li class="list-group-item">
+        Time: @Model?.MilitaryTime
+    </li>
+</ul>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="MatchId" />
+    <button type="submit" class="btn btn-dark">Delete</button>
+    <a asp-action="Index" asp-controller="Home" class="btn btn-outline-dark">Cancel</a>
+</form>

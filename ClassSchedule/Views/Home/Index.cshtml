@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Match>
+
+@{
+    ViewData["Title"] = "Match Schedule";
+
+    // get value of id route segment
+    int id = Convert.ToInt32(ViewContext.RouteData.Values["id"]);  
+}
+
+<div class="text-center">
+    <h1 class="display-4">Match Schedule</h1>
+
+    @* create links to filter Matches by league, mark selected league with 'btn-dark' css class *@
+    @foreach (League l in ViewBag.Leagues)
+    {
+        string btnCss = (id == l.LeagueId) ? "btn btn-dark" : "btn btn-outline-dark";
+        <a asp-action="Index" asp-route-id="@l.LeagueId" class="@btnCss mr-1 mb-2">@l.Name</a>
+    }
+</div>
+
+<a asp-action="Add" asp-controller="Match" class="ml-3">Schedule Match</a>
+
+<table class="table">
+    <thead>
+        <tr><th>Number</th><th>League</th><th>Time</th><th>Home Team</th><th>Player 1</th><th>Player 2</th><th>Away Team</th><th>Player 1</th><th>Player 2</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach (Match m in Model) {
+        <tr>
+            <td>@m.Number</td>
+            <td>@m.League.Name</td>
+            <td>@m.MilitaryTime</td>
+            <td>Spartans</td>
+            <td>B++</td>
+            <td>Quhp</td>
+            <td>Jets</td>
+            <td>Jaime</td>
+            <td>TheEvilIsBack</td>
+            <td>
+                <a asp-action="Edit" asp-controller="Match" asp-route-id="@m.MatchId"
+                   class="btn btn-outline-dark">Edit</a>
+                <a asp-action="Delete" asp-controller="Match" asp-route-id="@m.MatchId"
+                   class="btn btn-outline-dark">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
